@@ -1,5 +1,5 @@
 import re
-import long_responses
+import proper_responses
 import webbrowser
 
 def message_prob(user_msg, recognized_words, single_response = False, required_words = []):
