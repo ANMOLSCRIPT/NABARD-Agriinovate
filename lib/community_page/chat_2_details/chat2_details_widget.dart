@@ -10,6 +10,7 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 import 'chat2_details_model.dart';
 export 'chat2_details_model.dart';
 
@@ -50,6 +51,8 @@ class _Chat2DetailsWidgetState extends State<Chat2DetailsWidget> {
         }(),
       );
     });
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override
@@ -135,7 +138,7 @@ class _Chat2DetailsWidgetState extends State<Chat2DetailsWidget> {
                                   borderRadius: BorderRadius.circular(12.0),
                                   shape: BoxShape.rectangle,
                                   border: Border.all(
-                                    color: FlutterFlowTheme.of(context).primary,
+                                    color: const Color(0xFF002400),
                                     width: 2.0,
                                   ),
                                 ),
@@ -382,12 +385,14 @@ class _Chat2DetailsWidgetState extends State<Chat2DetailsWidget> {
                     barrierColor: const Color(0x00FFFFFF),
                     context: context,
                     builder: (context) {
-                      return GestureDetector(
-                        onTap: () => FocusScope.of(context).unfocus(),
-                        child: Padding(
-                          padding: MediaQuery.viewInsetsOf(context),
-                          child: ChatDetailsOverlayWidget(
-                            chatRef: widget.chatRef!,
+                      return WebViewAware(
+                        child: GestureDetector(
+                          onTap: () => FocusScope.of(context).unfocus(),
+                          child: Padding(
+                            padding: MediaQuery.viewInsetsOf(context),
+                            child: ChatDetailsOverlayWidget(
+                              chatRef: widget.chatRef!,
+                            ),
                           ),
                         ),
                       );

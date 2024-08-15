@@ -25,9 +25,6 @@ class EditProfileAuth2Model extends FlutterFlowModel<EditProfileAuth2Widget> {
   // State field(s) for DropDown widget.
   String? dropDownValue3;
   FormFieldController<String>? dropDownValueController3;
-  // State field(s) for DropDown widget.
-  String? dropDownValue4;
-  FormFieldController<String>? dropDownValueController4;
   // State field(s) for myBio widget.
   FocusNode? myBioFocusNode;
   TextEditingController? myBioTextController;

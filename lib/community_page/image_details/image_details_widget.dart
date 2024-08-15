@@ -91,6 +91,8 @@ class _ImageDetailsWidgetState extends State<ImageDetailsWidget>
         ],
       ),
     });
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override

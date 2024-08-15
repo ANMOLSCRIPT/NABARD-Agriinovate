@@ -108,11 +108,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => const AboutCommunityPageWidget(),
         ),
         FFRoute(
-          name: 'PriceDiscoveryPage',
-          path: '/priceDiscoveryPage',
+          name: 'PaymentsPage',
+          path: '/paymentsPage',
           builder: (context, params) => params.isEmpty
-              ? const NavBarPage(initialPage: 'PriceDiscoveryPage')
-              : const PriceDiscoveryPageWidget(),
+              ? const NavBarPage(initialPage: 'PaymentsPage')
+              : const PaymentsPageWidget(),
         ),
         FFRoute(
           name: 'MarketTrendsPage',

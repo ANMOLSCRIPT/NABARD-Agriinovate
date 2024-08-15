@@ -22,6 +22,8 @@ class _AboutCommunityPageWidgetState extends State<AboutCommunityPageWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => AboutCommunityPageModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override
@@ -37,7 +39,7 @@ class _AboutCommunityPageWidgetState extends State<AboutCommunityPageWidget> {
       onTap: () => FocusScope.of(context).unfocus(),
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
+        backgroundColor: const Color(0xFF002400),
         body: SafeArea(
           top: true,
           child: Column(
@@ -63,6 +65,15 @@ class _AboutCommunityPageWidgetState extends State<AboutCommunityPageWidget> {
                       color: Colors.black,
                     ),
                   ),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(8.0),
+                    child: Image.asset(
+                      'assets/images/_290c722b-757f-4607-bd37-96e711035aad.jpg',
+                      width: 300.0,
+                      height: 200.0,
+                      fit: BoxFit.cover,
+                    ),
+                  ),
                 ),
               ),
               Align(
@@ -76,6 +87,7 @@ class _AboutCommunityPageWidgetState extends State<AboutCommunityPageWidget> {
                     textAlign: TextAlign.center,
                     style: FlutterFlowTheme.of(context).headlineLarge.override(
                           fontFamily: 'Outfit',
+                          color: const Color(0xFFF3F7F0),
                           letterSpacing: 0.0,
                           fontWeight: FontWeight.bold,
                         ),
@@ -93,6 +105,7 @@ class _AboutCommunityPageWidgetState extends State<AboutCommunityPageWidget> {
                     textAlign: TextAlign.center,
                     style: FlutterFlowTheme.of(context).headlineSmall.override(
                           fontFamily: 'Outfit',
+                          color: const Color(0xFFF3F7F0),
                           letterSpacing: 0.0,
                         ),
                   ),
@@ -116,7 +129,7 @@ class _AboutCommunityPageWidgetState extends State<AboutCommunityPageWidget> {
                           const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
                       iconPadding:
                           const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                      color: const Color(0xFF39EF62),
+                      color: const Color(0xFF6B8F71),
                       textStyle:
                           FlutterFlowTheme.of(context).headlineLarge.override(
                                 fontFamily: 'Outfit',

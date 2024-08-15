@@ -24,6 +24,8 @@ class _Chat2MainWidgetState extends State<Chat2MainWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => Chat2MainModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override
@@ -39,9 +41,9 @@ class _Chat2MainWidgetState extends State<Chat2MainWidget> {
       onTap: () => FocusScope.of(context).unfocus(),
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
+        backgroundColor: Colors.white,
         appBar: AppBar(
-          backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
+          backgroundColor: const Color(0xFF6B8F71),
           automaticallyImplyLeading: false,
           title: Text(
             FFLocalizations.of(context).getText(
@@ -56,11 +58,11 @@ class _Chat2MainWidgetState extends State<Chat2MainWidget> {
             Padding(
               padding: const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 16.0, 8.0),
               child: FlutterFlowIconButton(
-                borderColor: FlutterFlowTheme.of(context).primary,
+                borderColor: const Color(0xFF002400),
                 borderRadius: 12.0,
                 borderWidth: 1.0,
                 buttonSize: 40.0,
-                fillColor: FlutterFlowTheme.of(context).accent1,
+                fillColor: const Color(0xFFBBDDC1),
                 icon: Icon(
                   Icons.add_comment,
                   color: FlutterFlowTheme.of(context).primaryText,
@@ -549,9 +551,8 @@ class _Chat2MainWidgetState extends State<Chat2MainWidget> {
                                                                 height: 32.0,
                                                                 decoration:
                                                                     BoxDecoration(
-                                                                  color: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .accent1,
+                                                                  color: const Color(
+                                                                      0xFFBBDDC1),
                                                                   borderRadius:
                                                                       BorderRadius
                                                                           .circular(
@@ -560,9 +561,8 @@ class _Chat2MainWidgetState extends State<Chat2MainWidget> {
                                                                       .rectangle,
                                                                   border: Border
                                                                       .all(
-                                                                    color: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .primary,
+                                                                    color: const Color(
+                                                                        0xFF002400),
                                                                     width: 2.0,
                                                                   ),
                                                                 ),
@@ -609,9 +609,8 @@ class _Chat2MainWidgetState extends State<Chat2MainWidget> {
                                                             height: 32.0,
                                                             decoration:
                                                                 BoxDecoration(
-                                                              color: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .accent1,
+                                                              color: const Color(
+                                                                  0xFFBBDDC1),
                                                               borderRadius:
                                                                   BorderRadius
                                                                       .circular(
@@ -620,9 +619,8 @@ class _Chat2MainWidgetState extends State<Chat2MainWidget> {
                                                                   .rectangle,
                                                               border:
                                                                   Border.all(
-                                                                color: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .primary,
+                                                                color: const Color(
+                                                                    0xFF002400),
                                                                 width: 2.0,
                                                               ),
                                                             ),
@@ -682,7 +680,7 @@ class _Chat2MainWidgetState extends State<Chat2MainWidget> {
                                                                   FFLocalizations.of(
                                                                           context)
                                                                       .getText(
-                                                                    'h8xrcu32' /* Group Chat */,
+                                                                    'h76037zh' /* Farmer's community */,
                                                                   ),
                                                                   textAlign:
                                                                       TextAlign
@@ -717,17 +715,15 @@ class _Chat2MainWidgetState extends State<Chat2MainWidget> {
                                                                   height: 12.0,
                                                                   decoration:
                                                                       BoxDecoration(
-                                                                    color: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .accent1,
+                                                                    color: const Color(
+                                                                        0xFFBBDDC1),
                                                                     shape: BoxShape
                                                                         .circle,
                                                                     border:
                                                                         Border
                                                                             .all(
-                                                                      color: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .primary,
+                                                                      color: const Color(
+                                                                          0xFF002400),
                                                                       width:
                                                                           2.0,
                                                                     ),

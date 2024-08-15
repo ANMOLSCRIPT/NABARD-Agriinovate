@@ -33,6 +33,8 @@ class _UserListSmallWidgetState extends State<UserListSmallWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => UserListSmallModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override

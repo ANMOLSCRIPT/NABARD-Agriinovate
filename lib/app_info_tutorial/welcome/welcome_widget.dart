@@ -21,6 +21,8 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => WelcomeModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override
@@ -36,7 +38,7 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
       onTap: () => FocusScope.of(context).unfocus(),
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
+        backgroundColor: const Color(0xFF002400),
         body: SafeArea(
           top: true,
           child: Column(
@@ -44,22 +46,34 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
             children: [
               Align(
                 alignment: const AlignmentDirectional(0.0, 0.0),
-                child: Container(
-                  width: 336.0,
-                  height: 369.0,
-                  decoration: BoxDecoration(
-                    boxShadow: const [
-                      BoxShadow(
-                        blurRadius: 4.0,
-                        color: Color(0x33000000),
-                        offset: Offset(
-                          0.0,
-                          2.0,
-                        ),
-                      )
-                    ],
-                    border: Border.all(
-                      color: Colors.black,
+                child: Padding(
+                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
+                  child: Container(
+                    width: 336.0,
+                    height: 369.0,
+                    decoration: BoxDecoration(
+                      boxShadow: const [
+                        BoxShadow(
+                          blurRadius: 4.0,
+                          color: Color(0x33000000),
+                          offset: Offset(
+                            0.0,
+                            2.0,
+                          ),
+                        )
+                      ],
+                      border: Border.all(
+                        color: Colors.black,
+                      ),
+                    ),
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(8.0),
+                      child: Image.asset(
+                        'assets/images/_250cb11f-8baa-466d-97c2-b3dcce602359.jpg',
+                        width: 300.0,
+                        height: 200.0,
+                        fit: BoxFit.cover,
+                      ),
                     ),
                   ),
                 ),
@@ -75,6 +89,7 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
                     textAlign: TextAlign.center,
                     style: FlutterFlowTheme.of(context).headlineLarge.override(
                           fontFamily: 'Outfit',
+                          color: const Color(0xFFF3F7F0),
                           letterSpacing: 0.0,
                         ),
                   ),
@@ -91,6 +106,7 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
                     textAlign: TextAlign.center,
                     style: FlutterFlowTheme.of(context).headlineSmall.override(
                           fontFamily: 'Outfit',
+                          color: const Color(0xFFF3F7F0),
                           letterSpacing: 0.0,
                         ),
                   ),
@@ -114,7 +130,7 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
                           const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
                       iconPadding:
                           const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                      color: const Color(0xFF39EF62),
+                      color: const Color(0xFF6B8F71),
                       textStyle:
                           FlutterFlowTheme.of(context).headlineLarge.override(
                                 fontFamily: 'Outfit',

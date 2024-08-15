@@ -71,6 +71,8 @@ class _Auth2LoginWidgetState extends State<Auth2LoginWidget>
         ],
       ),
     });
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override
@@ -107,52 +109,15 @@ class _Auth2LoginWidgetState extends State<Auth2LoginWidget>
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 70.0, 0.0, 32.0),
-                  child: Container(
-                    width: 200.0,
-                    height: 70.0,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(16.0),
-                    ),
-                    alignment: const AlignmentDirectional(0.0, 0.0),
-                    child: Row(
-                      mainAxisSize: MainAxisSize.max,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
-                              0.0, 0.0, 12.0, 0.0),
-                          child: Icon(
-                            Icons.flourescent_rounded,
-                            color: FlutterFlowTheme.of(context).info,
-                            size: 44.0,
-                          ),
-                        ),
-                        Text(
-                          FFLocalizations.of(context).getText(
-                            'ixhdbobc' /* flow.io */,
-                          ),
-                          style: FlutterFlowTheme.of(context)
-                              .displaySmall
-                              .override(
-                                fontFamily: 'Outfit',
-                                color: FlutterFlowTheme.of(context).info,
-                                letterSpacing: 0.0,
-                              ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(16.0),
+                  padding:
+                      const EdgeInsetsDirectional.fromSTEB(16.0, 80.0, 16.0, 16.0),
                   child: Container(
                     width: double.infinity,
                     constraints: const BoxConstraints(
                       maxWidth: 570.0,
                     ),
                     decoration: BoxDecoration(
-                      color: FlutterFlowTheme.of(context).secondaryBackground,
+                      color: const Color(0xFFF3F7F0),
                       boxShadow: const [
                         BoxShadow(
                           blurRadius: 4.0,
@@ -182,6 +147,7 @@ class _Auth2LoginWidgetState extends State<Auth2LoginWidget>
                                   .displaySmall
                                   .override(
                                     fontFamily: 'Outfit',
+                                    color: const Color(0xFF422F2F),
                                     letterSpacing: 0.0,
                                   ),
                             ),
@@ -197,6 +163,7 @@ class _Auth2LoginWidgetState extends State<Auth2LoginWidget>
                                     .labelLarge
                                     .override(
                                       fontFamily: 'Readex Pro',
+                                      color: const Color(0xFF422F2F),
                                       letterSpacing: 0.0,
                                     ),
                               ),
@@ -232,9 +199,8 @@ class _Auth2LoginWidgetState extends State<Auth2LoginWidget>
                                       borderRadius: BorderRadius.circular(12.0),
                                     ),
                                     focusedBorder: OutlineInputBorder(
-                                      borderSide: BorderSide(
-                                        color: FlutterFlowTheme.of(context)
-                                            .primary,
+                                      borderSide: const BorderSide(
+                                        color: Colors.white,
                                         width: 2.0,
                                       ),
                                       borderRadius: BorderRadius.circular(12.0),
@@ -257,7 +223,7 @@ class _Auth2LoginWidgetState extends State<Auth2LoginWidget>
                                     ),
                                     filled: true,
                                     fillColor: FlutterFlowTheme.of(context)
-                                        .primaryBackground,
+                                        .secondaryBackground,
                                   ),
                                   style: FlutterFlowTheme.of(context)
                                       .bodyLarge
@@ -330,7 +296,7 @@ class _Auth2LoginWidgetState extends State<Auth2LoginWidget>
                                     ),
                                     filled: true,
                                     fillColor: FlutterFlowTheme.of(context)
-                                        .primaryBackground,
+                                        .secondaryBackground,
                                     suffixIcon: InkWell(
                                       onTap: () => setState(
                                         () => _model.passwordVisibility =
@@ -391,7 +357,7 @@ class _Auth2LoginWidgetState extends State<Auth2LoginWidget>
                                       0.0, 0.0, 0.0, 0.0),
                                   iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 0.0),
-                                  color: FlutterFlowTheme.of(context).primary,
+                                  color: const Color(0xFF002400),
                                   textStyle: FlutterFlowTheme.of(context)
                                       .titleSmall
                                       .override(
@@ -422,6 +388,7 @@ class _Auth2LoginWidgetState extends State<Auth2LoginWidget>
                                       .labelMedium
                                       .override(
                                         fontFamily: 'Readex Pro',
+                                        color: const Color(0xFF422F2F),
                                         letterSpacing: 0.0,
                                       ),
                                 ),
@@ -473,8 +440,7 @@ class _Auth2LoginWidgetState extends State<Auth2LoginWidget>
                                     width: 2.0,
                                   ),
                                   borderRadius: BorderRadius.circular(12.0),
-                                  hoverColor: FlutterFlowTheme.of(context)
-                                      .primaryBackground,
+                                  hoverColor: Colors.white,
                                 ),
                               ),
                             ),
@@ -529,8 +495,7 @@ class _Auth2LoginWidgetState extends State<Auth2LoginWidget>
                                         ),
                                         borderRadius:
                                             BorderRadius.circular(12.0),
-                                        hoverColor: FlutterFlowTheme.of(context)
-                                            .primaryBackground,
+                                        hoverColor: Colors.white,
                                       ),
                                     ),
                                   ),
@@ -617,7 +582,7 @@ class _Auth2LoginWidgetState extends State<Auth2LoginWidget>
                                   iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 0.0),
                                   color: FlutterFlowTheme.of(context)
-                                      .primaryBackground,
+                                      .secondaryBackground,
                                   textStyle: FlutterFlowTheme.of(context)
                                       .titleSmall
                                       .override(

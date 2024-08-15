@@ -1,3 +1,4 @@
+import 'package:provider/provider.dart';
 import 'package:flutter/material.dart';
 
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -22,7 +23,13 @@ void main() async {
 
   await FFLocalizations.initialize();
 
-  runApp(const MyApp());
+  final appState = FFAppState(); // Initialize FFAppState
+  await appState.initializePersistedState();
+
+  runApp(ChangeNotifierProvider(
+    create: (context) => appState,
+    child: const MyApp(),
+  ));
 }
 
 class MyApp extends StatefulWidget {
@@ -148,9 +155,9 @@ class _NavBarPageState extends State<NavBarPage> {
   Widget build(BuildContext context) {
     final tabs = {
       'HomePage': const HomePageWidget(),
-      'PriceDiscoveryPage': const PriceDiscoveryPageWidget(),
-      'chat_2_main': const Chat2MainWidget(),
       'MarketTrendsPage': const MarketTrendsPageWidget(),
+      'chat_2_main': const Chat2MainWidget(),
+      'PaymentsPage': const PaymentsPageWidget(),
       'NegotiatingToolsPage': const NegotiatingToolsPageWidget(),
     };
     final currentIndex = tabs.keys.toList().indexOf(_currentPageName);
@@ -163,9 +170,9 @@ class _NavBarPageState extends State<NavBarPage> {
           _currentPage = null;
           _currentPageName = tabs.keys.toList()[i];
         }),
-        backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
-        selectedItemColor: const Color(0xFF39EF40),
-        unselectedItemColor: const Color(0xFF060606),
+        backgroundColor: const Color(0xFFF3F7F0),
+        selectedItemColor: const Color(0xFF365A39),
+        unselectedItemColor: Colors.black,
         showSelectedLabels: true,
         showUnselectedLabels: true,
         type: BottomNavigationBarType.fixed,
@@ -182,11 +189,11 @@ class _NavBarPageState extends State<NavBarPage> {
           ),
           BottomNavigationBarItem(
             icon: const Icon(
-              Icons.currency_rupee,
+              Icons.trending_up,
               size: 30.0,
             ),
             label: FFLocalizations.of(context).getText(
-              'dvtuejpk' /* Price */,
+              '0w2i1ksk' /* Trends */,
             ),
             tooltip: '',
           ),
@@ -202,11 +209,11 @@ class _NavBarPageState extends State<NavBarPage> {
           ),
           BottomNavigationBarItem(
             icon: const Icon(
-              Icons.trending_up,
+              Icons.currency_rupee,
               size: 30.0,
             ),
             label: FFLocalizations.of(context).getText(
-              '0w2i1ksk' /* Trends */,
+              'dvtuejpk' /* Payments */,
             ),
             tooltip: '',
           ),

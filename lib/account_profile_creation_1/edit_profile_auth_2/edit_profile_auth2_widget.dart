@@ -2,6 +2,7 @@ import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/backend/firebase_storage/storage.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
+import '/flutter_flow/flutter_flow_language_selector.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
@@ -47,6 +48,8 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget> {
 
     _model.myBioTextController ??= TextEditingController();
     _model.myBioFocusNode ??= FocusNode();
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override
@@ -96,7 +99,8 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget> {
                 height: 100.0,
                 decoration: BoxDecoration(
                   color: FlutterFlowTheme.of(context).accent2,
-                  shape: BoxShape.circle,
+                  borderRadius: BorderRadius.circular(12.0),
+                  shape: BoxShape.rectangle,
                   border: Border.all(
                     color: FlutterFlowTheme.of(context).secondary,
                     width: 2.0,
@@ -108,11 +112,18 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget> {
                     children: [
                       ClipRRect(
                         borderRadius: BorderRadius.circular(8.0),
-                        child: Image.asset(
-                          'assets/images/demo-image2.png',
+                        child: Image.network(
+                          'https://images.unsplash.com/photo-1624806992928-9c7a04a8383d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHwxfHxmYXJtZXJ8ZW58MHx8fHwxNzIzNTU0ODYyfDA&ixlib=rb-4.0.3&q=80&w=1080',
                           width: 300.0,
                           height: 200.0,
                           fit: BoxFit.cover,
+                          errorBuilder: (context, error, stackTrace) =>
+                              Image.asset(
+                            'assets/images/error_image.png',
+                            width: 300.0,
+                            height: 200.0,
+                            fit: BoxFit.cover,
+                          ),
                         ),
                       ),
                     ],
@@ -218,6 +229,7 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget> {
                 ),
                 labelStyle: FlutterFlowTheme.of(context).labelMedium.override(
                       fontFamily: 'Readex Pro',
+                      color: FlutterFlowTheme.of(context).primaryText,
                       letterSpacing: 0.0,
                     ),
                 hintText: FFLocalizations.of(context).getText(
@@ -225,6 +237,7 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget> {
                 ),
                 hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
                       fontFamily: 'Readex Pro',
+                      color: FlutterFlowTheme.of(context).primaryText,
                       letterSpacing: 0.0,
                     ),
                 errorStyle: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -241,7 +254,7 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget> {
                 ),
                 focusedBorder: OutlineInputBorder(
                   borderSide: BorderSide(
-                    color: FlutterFlowTheme.of(context).primary,
+                    color: FlutterFlowTheme.of(context).primaryText,
                     width: 2.0,
                   ),
                   borderRadius: BorderRadius.circular(8.0),
@@ -261,7 +274,7 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget> {
                   borderRadius: BorderRadius.circular(8.0),
                 ),
                 filled: true,
-                fillColor: FlutterFlowTheme.of(context).primaryBackground,
+                fillColor: FlutterFlowTheme.of(context).secondaryBackground,
                 contentPadding:
                     const EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 0.0, 12.0),
               ),
@@ -269,9 +282,30 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget> {
                     fontFamily: 'Readex Pro',
                     letterSpacing: 0.0,
                   ),
-              cursorColor: FlutterFlowTheme.of(context).primary,
+              cursorColor: FlutterFlowTheme.of(context).primaryText,
               validator:
                   _model.yourNameTextControllerValidator.asValidator(context),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 12.0),
+            child: FlutterFlowLanguageSelector(
+              height: 50.0,
+              backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
+              borderColor: Colors.transparent,
+              dropdownIconColor: FlutterFlowTheme.of(context).primaryText,
+              borderRadius: 8.0,
+              textStyle: TextStyle(
+                color: FlutterFlowTheme.of(context).primaryText,
+                fontWeight: FontWeight.normal,
+                fontSize: 13.0,
+              ),
+              hideFlags: true,
+              flagSize: 24.0,
+              flagTextGap: 8.0,
+              currentLanguage: FFLocalizations.of(context).languageCode,
+              languages: FFLocalizations.languages(),
+              onChanged: (lang) => setAppLanguage(context, lang),
             ),
           ),
           Padding(
@@ -281,62 +315,128 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget> {
                   FormFieldController<String>(null),
               options: [
                 FFLocalizations.of(context).getText(
-                  'z1hoshpm' /* English */,
+                  'mu7ixnom' /* Jammu and Kashmir */,
                 ),
                 FFLocalizations.of(context).getText(
-                  'a2kqf6ae' /* हिंदी */,
+                  'nukd4uex' /* Ladakh */,
                 ),
                 FFLocalizations.of(context).getText(
-                  'pxlk9lt3' /* ਪੰਜਾਬੀ */,
+                  'v0rq4px0' /* Punjab */,
                 ),
                 FFLocalizations.of(context).getText(
-                  'zog2uq8z' /* தமிழ் */,
+                  '5jdrttxr' /* Himachal Pradesh */,
                 ),
                 FFLocalizations.of(context).getText(
-                  '0pclhmn8' /* తెలుగు */,
+                  'jg66hbzn' /* Haryana */,
                 ),
                 FFLocalizations.of(context).getText(
-                  'lrmfhw7i' /* മലയാളം */,
+                  'jupp4elw' /* Delhi */,
                 ),
                 FFLocalizations.of(context).getText(
-                  'ly5ji8zn' /* ગુજરાતી */,
+                  'xtlwm20q' /* Uttarakhand */,
                 ),
                 FFLocalizations.of(context).getText(
-                  '3zj8zbtb' /* ଓଡିଆ */,
+                  'ohfa41dc' /* Rajasthan */,
                 ),
                 FFLocalizations.of(context).getText(
-                  'szqn7wu7' /* اردو */,
+                  '0z47br0l' /* Gujarat */,
                 ),
                 FFLocalizations.of(context).getText(
-                  '7sxhx1gm' /* ಕನ್ನಡ */,
+                  '85l2rdvb' /* Maharashtra */,
                 ),
                 FFLocalizations.of(context).getText(
-                  '8kc9twq8' /* অসমীয়া */,
+                  'ver5z5lp' /* Karnataka */,
+                ),
+                FFLocalizations.of(context).getText(
+                  'i6iwm7tl' /* Kerala */,
+                ),
+                FFLocalizations.of(context).getText(
+                  '8vh6u44y' /* Tamil Nadu */,
+                ),
+                FFLocalizations.of(context).getText(
+                  'vrb8r1mv' /* Andhra Pradesh */,
+                ),
+                FFLocalizations.of(context).getText(
+                  'gyc6q97r' /* Odisha */,
+                ),
+                FFLocalizations.of(context).getText(
+                  'u4a27o3g' /* Chattisgarh */,
+                ),
+                FFLocalizations.of(context).getText(
+                  '2m0zet0i' /* Bihar */,
+                ),
+                FFLocalizations.of(context).getText(
+                  'blozbkab' /* Jharkhand */,
+                ),
+                FFLocalizations.of(context).getText(
+                  'mmhuk67d' /* West Bengal */,
+                ),
+                FFLocalizations.of(context).getText(
+                  'i7diczqb' /* Sikkim */,
+                ),
+                FFLocalizations.of(context).getText(
+                  'gej0zi5s' /* Assam */,
+                ),
+                FFLocalizations.of(context).getText(
+                  'ooemgdm7' /* Mizoram */,
+                ),
+                FFLocalizations.of(context).getText(
+                  '38j05a82' /* Manipur */,
+                ),
+                FFLocalizations.of(context).getText(
+                  'dqi314k3' /* Nagaland */,
+                ),
+                FFLocalizations.of(context).getText(
+                  '7h6y2cw6' /* Madhya Pradesh */,
+                ),
+                FFLocalizations.of(context).getText(
+                  'c0z0ynwg' /* Uttar Pradesh */,
+                ),
+                FFLocalizations.of(context).getText(
+                  'zq8vnn6z' /* Telengana */,
+                ),
+                FFLocalizations.of(context).getText(
+                  '714px80a' /* Tripura */,
+                ),
+                FFLocalizations.of(context).getText(
+                  'pfbcqjx4' /* Meghalaya */,
                 )
               ],
               onChanged: (val) => setState(() => _model.dropDownValue1 = val),
-              width: double.infinity,
               height: 50.0,
+              searchHintTextStyle:
+                  FlutterFlowTheme.of(context).labelMedium.override(
+                        fontFamily: 'Readex Pro',
+                        letterSpacing: 0.0,
+                      ),
+              searchTextStyle: FlutterFlowTheme.of(context).bodyMedium.override(
+                    fontFamily: 'Readex Pro',
+                    letterSpacing: 0.0,
+                  ),
               textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
                     fontFamily: 'Readex Pro',
                     letterSpacing: 0.0,
                   ),
               hintText: FFLocalizations.of(context).getText(
-                'w1a9gno4' /* Select Language */,
+                'z2yykb3s' /* Select State */,
+              ),
+              searchHintText: FFLocalizations.of(context).getText(
+                '3gf0ribv' /* Search for your state */,
               ),
               icon: Icon(
                 Icons.keyboard_arrow_down_rounded,
-                color: FlutterFlowTheme.of(context).secondaryText,
+                color: FlutterFlowTheme.of(context).primaryText,
                 size: 24.0,
               ),
-              fillColor: FlutterFlowTheme.of(context).primaryBackground,
+              fillColor: FlutterFlowTheme.of(context).secondaryBackground,
               elevation: 2.0,
               borderColor: FlutterFlowTheme.of(context).alternate,
               borderWidth: 2.0,
               borderRadius: 8.0,
               margin: const EdgeInsetsDirectional.fromSTEB(16.0, 4.0, 16.0, 4.0),
               hidesUnderline: true,
-              isSearchable: false,
+              isOverButton: true,
+              isSearchable: true,
               isMultiSelect: false,
             ),
           ),
@@ -347,10 +447,22 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget> {
                   FormFieldController<String>(null),
               options: [
                 FFLocalizations.of(context).getText(
-                  'jg66hbzn' /* Haryana */,
+                  'wxqjj0wu' /* New Delhi */,
                 ),
                 FFLocalizations.of(context).getText(
-                  'jupp4elw' /* Delhi */,
+                  '2jry8a0e' /* West Delhi */,
+                ),
+                FFLocalizations.of(context).getText(
+                  'b5vamlrd' /* East Delhi */,
+                ),
+                FFLocalizations.of(context).getText(
+                  '425kzxx7' /* North Delhi */,
+                ),
+                FFLocalizations.of(context).getText(
+                  'urrt1oao' /* South Delhi */,
+                ),
+                FFLocalizations.of(context).getText(
+                  '9n9u6w9y' /* Central Delhi */,
                 )
               ],
               onChanged: (val) => setState(() => _model.dropDownValue2 = val),
@@ -360,11 +472,11 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget> {
                     letterSpacing: 0.0,
                   ),
               hintText: FFLocalizations.of(context).getText(
-                'z2yykb3s' /* Select State */,
+                'zlpe3rxb' /* Select Region */,
               ),
               icon: Icon(
                 Icons.keyboard_arrow_down_rounded,
-                color: FlutterFlowTheme.of(context).secondaryText,
+                color: FlutterFlowTheme.of(context).primaryText,
                 size: 24.0,
               ),
               fillColor: FlutterFlowTheme.of(context).secondaryBackground,
@@ -386,46 +498,64 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget> {
                   FormFieldController<String>(null),
               options: [
                 FFLocalizations.of(context).getText(
-                  '6huvxm14' /* Option 1 */,
+                  '7vv01fio' /* Wheat */,
+                ),
+                FFLocalizations.of(context).getText(
+                  'ilx20u86' /* Rice */,
+                ),
+                FFLocalizations.of(context).getText(
+                  'pzesecc1' /* Sugarcane */,
+                ),
+                FFLocalizations.of(context).getText(
+                  '7qctxw9y' /* Maise/Corn */,
+                ),
+                FFLocalizations.of(context).getText(
+                  '5erfyion' /* Pulses */,
+                ),
+                FFLocalizations.of(context).getText(
+                  'oy7epdo8' /* Tea */,
+                ),
+                FFLocalizations.of(context).getText(
+                  'oqzcogan' /* Coffee */,
+                ),
+                FFLocalizations.of(context).getText(
+                  '5504hb0z' /* Oil Seeds */,
+                ),
+                FFLocalizations.of(context).getText(
+                  'zq065uxe' /* Cotton */,
+                ),
+                FFLocalizations.of(context).getText(
+                  '0jz0mzvq' /* Jute */,
+                ),
+                FFLocalizations.of(context).getText(
+                  'ucl2hy3i' /* Jowar */,
+                ),
+                FFLocalizations.of(context).getText(
+                  'ixaoliwr' /* Bajra */,
+                ),
+                FFLocalizations.of(context).getText(
+                  '0iljyqff' /* Tur */,
+                ),
+                FFLocalizations.of(context).getText(
+                  'v6k0ytbq' /* Millet */,
+                ),
+                FFLocalizations.of(context).getText(
+                  'vnysgy91' /* Soyabean */,
+                ),
+                FFLocalizations.of(context).getText(
+                  'vsiqzwsv' /* Rubber */,
+                ),
+                FFLocalizations.of(context).getText(
+                  '0mx8scwh' /* Coconut */,
+                ),
+                FFLocalizations.of(context).getText(
+                  '401f7j5z' /* GroundNut */,
+                ),
+                FFLocalizations.of(context).getText(
+                  'rtirh8u8' /* Saffrron */,
                 )
               ],
               onChanged: (val) => setState(() => _model.dropDownValue3 = val),
-              height: 50.0,
-              textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
-                    fontFamily: 'Readex Pro',
-                    letterSpacing: 0.0,
-                  ),
-              hintText: FFLocalizations.of(context).getText(
-                'ar84at8a' /* Select Region */,
-              ),
-              icon: Icon(
-                Icons.keyboard_arrow_down_rounded,
-                color: FlutterFlowTheme.of(context).secondaryText,
-                size: 24.0,
-              ),
-              fillColor: FlutterFlowTheme.of(context).secondaryBackground,
-              elevation: 2.0,
-              borderColor: FlutterFlowTheme.of(context).alternate,
-              borderWidth: 2.0,
-              borderRadius: 8.0,
-              margin: const EdgeInsetsDirectional.fromSTEB(16.0, 4.0, 16.0, 4.0),
-              hidesUnderline: true,
-              isOverButton: true,
-              isSearchable: false,
-              isMultiSelect: false,
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 12.0),
-            child: FlutterFlowDropDown<String>(
-              controller: _model.dropDownValueController4 ??=
-                  FormFieldController<String>(null),
-              options: [
-                FFLocalizations.of(context).getText(
-                  '7vv01fio' /* Option 1 */,
-                )
-              ],
-              onChanged: (val) => setState(() => _model.dropDownValue4 = val),
               height: 50.0,
               textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
                     fontFamily: 'Readex Pro',
@@ -436,7 +566,7 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget> {
               ),
               icon: Icon(
                 Icons.keyboard_arrow_down_rounded,
-                color: FlutterFlowTheme.of(context).secondaryText,
+                color: FlutterFlowTheme.of(context).primaryText,
                 size: 24.0,
               ),
               fillColor: FlutterFlowTheme.of(context).secondaryBackground,
@@ -464,6 +594,7 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget> {
                 ),
                 labelStyle: FlutterFlowTheme.of(context).labelMedium.override(
                       fontFamily: 'Readex Pro',
+                      color: FlutterFlowTheme.of(context).primaryText,
                       letterSpacing: 0.0,
                     ),
                 hintText: FFLocalizations.of(context).getText(
@@ -471,6 +602,7 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget> {
                 ),
                 hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
                       fontFamily: 'Readex Pro',
+                      color: FlutterFlowTheme.of(context).primaryText,
                       letterSpacing: 0.0,
                     ),
                 errorStyle: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -517,7 +649,7 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget> {
                   ),
               textAlign: TextAlign.start,
               maxLines: 3,
-              cursorColor: FlutterFlowTheme.of(context).primary,
+              cursorColor: FlutterFlowTheme.of(context).primaryText,
               validator:
                   _model.myBioTextControllerValidator.asValidator(context),
             ),
@@ -541,7 +673,6 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget> {
                         : currentUserPhoto,
                     shortDescription: _model.myBioTextController.text,
                     lastActiveTime: getCurrentTimestamp,
-                    role: _model.dropDownValue1,
                   ));
                   ScaffoldMessenger.of(context).showSnackBar(
                     SnackBar(

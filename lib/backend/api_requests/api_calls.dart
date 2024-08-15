@@ -181,6 +181,195 @@ class NewsAPICall {
       ) as List?;
 }
 
+class PriceAPICall {
+  static Future<ApiCallResponse> call() async {
+    return ApiManager.instance.makeApiCall(
+      callName: 'Price API',
+      apiUrl:
+          'https://api.data.gov.in/resource/9ef84268-d588-465a-a308-a864a43d0070?api-key=579b464db66ec23bdd000001cdc3b564546246a772a26393094f5645&offset=0&limit=all&format=csv&format=json',
+      callType: ApiCallType.GET,
+      headers: {},
+      params: {},
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      isStreamingApi: false,
+      alwaysAllowBody: false,
+    );
+  }
+
+  static List? records(dynamic response) => getJsonField(
+        response,
+        r'''$.records''',
+        true,
+      ) as List?;
+  static List<String>? state(dynamic response) => (getJsonField(
+        response,
+        r'''$.records[:].state''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<String>(x))
+          .withoutNulls
+          .toList();
+  static List<String>? district(dynamic response) => (getJsonField(
+        response,
+        r'''$.records[:].district''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<String>(x))
+          .withoutNulls
+          .toList();
+  static List<String>? market(dynamic response) => (getJsonField(
+        response,
+        r'''$.records[:].market''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<String>(x))
+          .withoutNulls
+          .toList();
+  static List<String>? commodity(dynamic response) => (getJsonField(
+        response,
+        r'''$.records[:].commodity''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<String>(x))
+          .withoutNulls
+          .toList();
+  static List<String>? variety(dynamic response) => (getJsonField(
+        response,
+        r'''$.records[:].variety''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<String>(x))
+          .withoutNulls
+          .toList();
+  static List<String>? arrivalDate(dynamic response) => (getJsonField(
+        response,
+        r'''$.records[:].arrival_date''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<String>(x))
+          .withoutNulls
+          .toList();
+  static List<String>? minPrice(dynamic response) => (getJsonField(
+        response,
+        r'''$.records[:].min_price''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<String>(x))
+          .withoutNulls
+          .toList();
+  static List<String>? maxPrice(dynamic response) => (getJsonField(
+        response,
+        r'''$.records[:].max_price''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<String>(x))
+          .withoutNulls
+          .toList();
+  static List<String>? modalPrice(dynamic response) => (getJsonField(
+        response,
+        r'''$.records[:].modal_price''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<String>(x))
+          .withoutNulls
+          .toList();
+  static String? createdDate(dynamic response) =>
+      castToType<String>(getJsonField(
+        response,
+        r'''$.created_date''',
+      ));
+  static String? updatedDate(dynamic response) =>
+      castToType<String>(getJsonField(
+        response,
+        r'''$.updated_date''',
+      ));
+  static List<String>? orgHeading(dynamic response) => (getJsonField(
+        response,
+        r'''$.org''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<String>(x))
+          .withoutNulls
+          .toList();
+  static String? dataSource(dynamic response) =>
+      castToType<String>(getJsonField(
+        response,
+        r'''$.source''',
+      ));
+  static String? title(dynamic response) => castToType<String>(getJsonField(
+        response,
+        r'''$.title''',
+      ));
+  static List<String>? sector(dynamic response) => (getJsonField(
+        response,
+        r'''$.sector''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<String>(x))
+          .withoutNulls
+          .toList();
+}
+
+class SampleDataCall {
+  static Future<ApiCallResponse> call() async {
+    return ApiManager.instance.makeApiCall(
+      callName: 'SampleData',
+      apiUrl: 'https://anmolscript.github.io/SampleData/data.json',
+      callType: ApiCallType.GET,
+      headers: {},
+      params: {},
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      isStreamingApi: false,
+      alwaysAllowBody: false,
+    );
+  }
+
+  static List<String>? date(dynamic response) => (getJsonField(
+        response,
+        r'''$[:].date''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<String>(x))
+          .withoutNulls
+          .toList();
+  static List<int>? amount(dynamic response) => (getJsonField(
+        response,
+        r'''$[:].amount''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<int>(x))
+          .withoutNulls
+          .toList();
+  static List<String>? sender(dynamic response) => (getJsonField(
+        response,
+        r'''$[:].sender''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<String>(x))
+          .withoutNulls
+          .toList();
+}
+
 class ApiPagingParams {
   int nextPageNumber = 0;
   int numItems = 0;

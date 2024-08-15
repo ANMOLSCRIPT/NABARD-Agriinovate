@@ -8,8 +8,7 @@ export '/app_info_tutorial/about_negotiating_tools/about_negotiating_tools_widge
     show AboutNegotiatingToolsWidget;
 export '/app_info_tutorial/about_community_page/about_community_page_widget.dart'
     show AboutCommunityPageWidget;
-export '/pages/price_discovery_page/price_discovery_page_widget.dart'
-    show PriceDiscoveryPageWidget;
+export '/pages/payments_page/payments_page_widget.dart' show PaymentsPageWidget;
 export '/pages/market_trends_page/market_trends_page_widget.dart'
     show MarketTrendsPageWidget;
 export '/account_profile_creation_1/auth_2_create/auth2_create_widget.dart'

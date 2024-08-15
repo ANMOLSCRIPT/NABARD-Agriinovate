@@ -21,6 +21,8 @@ class _AboutWeatherNewsWidgetState extends State<AboutWeatherNewsWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => AboutWeatherNewsModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override
@@ -36,7 +38,7 @@ class _AboutWeatherNewsWidgetState extends State<AboutWeatherNewsWidget> {
       onTap: () => FocusScope.of(context).unfocus(),
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
+        backgroundColor: const Color(0xFF002400),
         body: SafeArea(
           top: true,
           child: Column(
@@ -62,6 +64,15 @@ class _AboutWeatherNewsWidgetState extends State<AboutWeatherNewsWidget> {
                       color: Colors.black,
                     ),
                   ),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(8.0),
+                    child: Image.asset(
+                      'assets/images/_fb8a611b-be1c-42dd-9b29-f891ef55a960.jpg',
+                      width: 300.0,
+                      height: 200.0,
+                      fit: BoxFit.cover,
+                    ),
+                  ),
                 ),
               ),
               Align(
@@ -75,6 +86,7 @@ class _AboutWeatherNewsWidgetState extends State<AboutWeatherNewsWidget> {
                     textAlign: TextAlign.center,
                     style: FlutterFlowTheme.of(context).headlineLarge.override(
                           fontFamily: 'Outfit',
+                          color: const Color(0xFFF3F7F0),
                           letterSpacing: 0.0,
                         ),
                   ),
@@ -91,6 +103,7 @@ class _AboutWeatherNewsWidgetState extends State<AboutWeatherNewsWidget> {
                     textAlign: TextAlign.center,
                     style: FlutterFlowTheme.of(context).headlineSmall.override(
                           fontFamily: 'Outfit',
+                          color: const Color(0xFFF3F7F0),
                           letterSpacing: 0.0,
                         ),
                   ),
@@ -114,7 +127,7 @@ class _AboutWeatherNewsWidgetState extends State<AboutWeatherNewsWidget> {
                           const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
                       iconPadding:
                           const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                      color: const Color(0xFF39EF62),
+                      color: const Color(0xFF6B8F71),
                       textStyle:
                           FlutterFlowTheme.of(context).headlineLarge.override(
                                 fontFamily: 'Outfit',
@@ -137,7 +150,7 @@ class _AboutWeatherNewsWidgetState extends State<AboutWeatherNewsWidget> {
                     context.pushNamed('auth_2_Create');
                   },
                   text: FFLocalizations.of(context).getText(
-                    'k6dmxplx' /* Skip */,
+                    'k6dmxplx' /* विवरण छोड़कर आगे बढ़ें */,
                   ),
                   options: FFButtonOptions(
                     width: 330.0,

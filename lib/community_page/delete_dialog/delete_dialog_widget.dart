@@ -69,6 +69,8 @@ class _DeleteDialogWidgetState extends State<DeleteDialogWidget>
         ],
       ),
     });
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override

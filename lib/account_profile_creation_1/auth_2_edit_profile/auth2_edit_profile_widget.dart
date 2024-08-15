@@ -50,6 +50,8 @@ class _Auth2EditProfileWidgetState extends State<Auth2EditProfileWidget>
         ],
       ),
     });
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override
@@ -89,7 +91,7 @@ class _Auth2EditProfileWidgetState extends State<Auth2EditProfileWidget>
                 ),
                 child: Container(
                   width: 100.0,
-                  height: 200.0,
+                  height: 69.0,
                   decoration: BoxDecoration(
                     gradient: LinearGradient(
                       colors: [

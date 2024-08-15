@@ -23,6 +23,8 @@ class _AboutNegotiatingToolsWidgetState
   void initState() {
     super.initState();
     _model = createModel(context, () => AboutNegotiatingToolsModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override
@@ -38,7 +40,7 @@ class _AboutNegotiatingToolsWidgetState
       onTap: () => FocusScope.of(context).unfocus(),
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
+        backgroundColor: const Color(0xFF002400),
         body: SafeArea(
           top: true,
           child: Column(
@@ -64,6 +66,15 @@ class _AboutNegotiatingToolsWidgetState
                       color: Colors.black,
                     ),
                   ),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(8.0),
+                    child: Image.asset(
+                      'assets/images/_3d87dc91-5400-4b88-a9c7-59ff8948b7eb.jpg',
+                      width: 300.0,
+                      height: 200.0,
+                      fit: BoxFit.cover,
+                    ),
+                  ),
                 ),
               ),
               Align(
@@ -77,6 +88,7 @@ class _AboutNegotiatingToolsWidgetState
                     textAlign: TextAlign.center,
                     style: FlutterFlowTheme.of(context).headlineLarge.override(
                           fontFamily: 'Outfit',
+                          color: const Color(0xFFF3F7F0),
                           letterSpacing: 0.0,
                         ),
                   ),
@@ -93,6 +105,7 @@ class _AboutNegotiatingToolsWidgetState
                     textAlign: TextAlign.center,
                     style: FlutterFlowTheme.of(context).headlineSmall.override(
                           fontFamily: 'Outfit',
+                          color: const Color(0xFFF3F7F0),
                           letterSpacing: 0.0,
                         ),
                   ),
@@ -116,7 +129,7 @@ class _AboutNegotiatingToolsWidgetState
                           const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
                       iconPadding:
                           const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                      color: const Color(0xFF39EF62),
+                      color: const Color(0xFF6B8F71),
                       textStyle:
                           FlutterFlowTheme.of(context).headlineLarge.override(
                                 fontFamily: 'Outfit',
@@ -139,7 +152,7 @@ class _AboutNegotiatingToolsWidgetState
                     context.pushNamed('auth_2_Create');
                   },
                   text: FFLocalizations.of(context).getText(
-                    '12sxypt7' /* Skip */,
+                    'sbkc1o9o' /* विवरण छोड़कर आगे बढ़ें */,
                   ),
                   options: FFButtonOptions(
                     width: 330.0,

@@ -49,6 +49,8 @@ class _WeatherPageWidgetState extends State<WeatherPageWidget> {
         );
       }
     });
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override
@@ -64,9 +66,9 @@ class _WeatherPageWidgetState extends State<WeatherPageWidget> {
       onTap: () => FocusScope.of(context).unfocus(),
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
+        backgroundColor: const Color(0xFFF3F7F0),
         appBar: AppBar(
-          backgroundColor: const Color(0xFF31FF00),
+          backgroundColor: const Color(0xFF6B8F71),
           iconTheme: const IconThemeData(color: Colors.black),
           automaticallyImplyLeading: true,
           title: Align(
@@ -77,6 +79,7 @@ class _WeatherPageWidgetState extends State<WeatherPageWidget> {
               ),
               style: FlutterFlowTheme.of(context).headlineLarge.override(
                     fontFamily: 'Outfit',
+                    color: Colors.black,
                     letterSpacing: 0.0,
                   ),
             ),
@@ -101,7 +104,7 @@ class _WeatherPageWidgetState extends State<WeatherPageWidget> {
                       ),
                       style: FlutterFlowTheme.of(context).displaySmall.override(
                             fontFamily: 'Outfit',
-                            color: FlutterFlowTheme.of(context).primaryText,
+                            color: const Color(0xFF422F2F),
                             letterSpacing: 0.0,
                             fontWeight: FontWeight.bold,
                           ),
@@ -128,8 +131,7 @@ class _WeatherPageWidgetState extends State<WeatherPageWidget> {
                                     .titleMedium
                                     .override(
                                       fontFamily: 'Readex Pro',
-                                      color: FlutterFlowTheme.of(context)
-                                          .primaryText,
+                                      color: const Color(0xFF002400),
                                       letterSpacing: 0.0,
                                       fontWeight: FontWeight.w500,
                                     ),
@@ -145,15 +147,16 @@ class _WeatherPageWidgetState extends State<WeatherPageWidget> {
                                     .bodyLarge
                                     .override(
                                       fontFamily: 'Readex Pro',
+                                      color: const Color(0xFF584444),
                                       letterSpacing: 0.0,
                                     ),
                               ),
                             ),
                           ],
                         ),
-                        Icon(
+                        const Icon(
                           Icons.wb_sunny,
-                          color: FlutterFlowTheme.of(context).primary,
+                          color: Color(0xFF002400),
                           size: 40.0,
                         ),
                       ],
@@ -180,8 +183,7 @@ class _WeatherPageWidgetState extends State<WeatherPageWidget> {
                                     .titleMedium
                                     .override(
                                       fontFamily: 'Readex Pro',
-                                      color: FlutterFlowTheme.of(context)
-                                          .primaryText,
+                                      color: const Color(0xFF002400),
                                       letterSpacing: 0.0,
                                       fontWeight: FontWeight.w500,
                                     ),
@@ -199,17 +201,16 @@ class _WeatherPageWidgetState extends State<WeatherPageWidget> {
                                     .bodyLarge
                                     .override(
                                       fontFamily: 'Readex Pro',
-                                      color: FlutterFlowTheme.of(context)
-                                          .secondaryText,
+                                      color: const Color(0xFF584444),
                                       letterSpacing: 0.0,
                                     ),
                               ),
                             ),
                           ],
                         ),
-                        FaIcon(
+                        const FaIcon(
                           FontAwesomeIcons.thermometer,
-                          color: FlutterFlowTheme.of(context).primary,
+                          color: Color(0xFF002400),
                           size: 40.0,
                         ),
                       ],
@@ -236,8 +237,7 @@ class _WeatherPageWidgetState extends State<WeatherPageWidget> {
                                     .titleMedium
                                     .override(
                                       fontFamily: 'Readex Pro',
-                                      color: FlutterFlowTheme.of(context)
-                                          .primaryText,
+                                      color: const Color(0xFF002400),
                                       letterSpacing: 0.0,
                                       fontWeight: FontWeight.w500,
                                     ),
@@ -253,17 +253,16 @@ class _WeatherPageWidgetState extends State<WeatherPageWidget> {
                                     .bodyLarge
                                     .override(
                                       fontFamily: 'Readex Pro',
-                                      color: FlutterFlowTheme.of(context)
-                                          .secondaryText,
+                                      color: const Color(0xFF584444),
                                       letterSpacing: 0.0,
                                     ),
                               ),
                             ),
                           ],
                         ),
-                        Icon(
+                        const Icon(
                           Icons.water_drop,
-                          color: FlutterFlowTheme.of(context).primary,
+                          color: Color(0xFF002400),
                           size: 40.0,
                         ),
                       ],
@@ -290,8 +289,7 @@ class _WeatherPageWidgetState extends State<WeatherPageWidget> {
                                     .titleMedium
                                     .override(
                                       fontFamily: 'Readex Pro',
-                                      color: FlutterFlowTheme.of(context)
-                                          .primaryText,
+                                      color: const Color(0xFF002400),
                                       letterSpacing: 0.0,
                                       fontWeight: FontWeight.w500,
                                     ),
@@ -307,17 +305,16 @@ class _WeatherPageWidgetState extends State<WeatherPageWidget> {
                                     .bodyLarge
                                     .override(
                                       fontFamily: 'Readex Pro',
-                                      color: FlutterFlowTheme.of(context)
-                                          .secondaryText,
+                                      color: const Color(0xFF584444),
                                       letterSpacing: 0.0,
                                     ),
                               ),
                             ),
                           ],
                         ),
-                        Icon(
+                        const Icon(
                           Icons.grain,
-                          color: FlutterFlowTheme.of(context).primary,
+                          color: Color(0xFF002400),
                           size: 40.0,
                         ),
                       ],
@@ -344,8 +341,7 @@ class _WeatherPageWidgetState extends State<WeatherPageWidget> {
                                     .titleMedium
                                     .override(
                                       fontFamily: 'Readex Pro',
-                                      color: FlutterFlowTheme.of(context)
-                                          .primaryText,
+                                      color: const Color(0xFF002400),
                                       letterSpacing: 0.0,
                                       fontWeight: FontWeight.w500,
                                     ),
@@ -363,8 +359,7 @@ class _WeatherPageWidgetState extends State<WeatherPageWidget> {
                                     .bodyLarge
                                     .override(
                                       fontFamily: 'Readex Pro',
-                                      color: FlutterFlowTheme.of(context)
-                                          .secondaryText,
+                                      color: const Color(0xFF584444),
                                       letterSpacing: 0.0,
                                     ),
                               ),
@@ -379,17 +374,16 @@ class _WeatherPageWidgetState extends State<WeatherPageWidget> {
                                     .bodyLarge
                                     .override(
                                       fontFamily: 'Readex Pro',
-                                      color: FlutterFlowTheme.of(context)
-                                          .secondaryText,
+                                      color: const Color(0xFF584444),
                                       letterSpacing: 0.0,
                                     ),
                               ),
                             ),
                           ],
                         ),
-                        Icon(
+                        const Icon(
                           Icons.air,
-                          color: FlutterFlowTheme.of(context).primary,
+                          color: Color(0xFF002400),
                           size: 40.0,
                         ),
                       ],
@@ -416,8 +410,7 @@ class _WeatherPageWidgetState extends State<WeatherPageWidget> {
                                     .titleMedium
                                     .override(
                                       fontFamily: 'Readex Pro',
-                                      color: FlutterFlowTheme.of(context)
-                                          .primaryText,
+                                      color: const Color(0xFF002400),
                                       letterSpacing: 0.0,
                                       fontWeight: FontWeight.w500,
                                     ),
@@ -437,8 +430,7 @@ class _WeatherPageWidgetState extends State<WeatherPageWidget> {
                                       .bodyLarge
                                       .override(
                                         fontFamily: 'Readex Pro',
-                                        color: FlutterFlowTheme.of(context)
-                                            .secondaryText,
+                                        color: const Color(0xFF584444),
                                         letterSpacing: 0.0,
                                       ),
                                 ),
@@ -446,9 +438,9 @@ class _WeatherPageWidgetState extends State<WeatherPageWidget> {
                             ),
                           ],
                         ),
-                        Icon(
+                        const Icon(
                           Icons.question_mark,
-                          color: FlutterFlowTheme.of(context).primary,
+                          color: Color(0xFF002400),
                           size: 40.0,
                         ),
                       ],
