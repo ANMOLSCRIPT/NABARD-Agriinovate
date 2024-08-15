@@ -1,0 +1,92 @@
+[
+    {
+        "transaction_id": "TXN001",
+        "date": "2024-08-01",
+        "amount": 5000,
+        "currency": "INR",
+        "type": "credit",
+        "sender": "KrishiMandi Co-op",
+        "receiver": "Farmer Ramesh"
+    },
+    {
+        "transaction_id": "TXN002",
+        "date": "2024-08-03",
+        "amount": 12000,
+        "currency": "INR",
+        "type": "debit",
+        "sender": "Farmer Suresh",
+        "receiver": "Fertilizer Shop"
+    },
+    {
+        "transaction_id": "TXN003",
+        "date": "2024-08-05",
+        "amount": 7500,
+        "currency": "INR",
+        "type": "credit",
+        "sender": "Grain Market",
+        "receiver": "Farmer Anita"
+    },
+    {
+        "transaction_id": "TXN004",
+        "date": "2024-08-08",
+        "amount": 9000,
+        "currency": "INR",
+        "type": "debit",
+        "sender": "Farmer Ramesh",
+        "receiver": "Seed Supplier"
+    },
+    {
+        "transaction_id": "TXN005",
+        "date": "2024-08-10",
+        "amount": 6000,
+        "currency": "INR",
+        "type": "credit",
+        "sender": "Vegetable Market",
+        "receiver": "Farmer Geeta"
+    },
+    {
+        "transaction_id": "TXN006",
+        "date": "2024-08-12",
+        "amount": 15000,
+        "currency": "INR",
+        "type": "debit",
+        "sender": "Farmer Vinod",
+        "receiver": "Tractor Dealer"
+    },
+    {
+        "transaction_id": "TXN007",
+        "date": "2024-08-15",
+        "amount": 8000,
+        "currency": "INR",
+        "type": "credit",
+        "sender": "Local Grain Market",
+        "receiver": "Farmer Suresh"
+    },
+    {
+        "transaction_id": "TXN008",
+        "date": "2024-08-17",
+        "amount": 9500,
+        "currency": "INR",
+        "type": "debit",
+        "sender": "Farmer Anita",
+        "receiver": "Irrigation Supplier"
+    },
+    {
+        "transaction_id": "TXN009",
+        "date": "2024-08-20",
+        "amount": 5000,
+        "currency": "INR",
+        "type": "credit",
+        "sender": "Fruit Market",
+        "receiver": "Farmer Geeta"
+    },
+    {
+        "transaction_id": "TXN010",
+        "date": "2024-08-22",
+        "amount": 11000,
+        "currency": "INR",
+        "type": "debit",
+        "sender": "Farmer Vinod",
+        "receiver": "Pesticide Supplier"
+    }
+]
