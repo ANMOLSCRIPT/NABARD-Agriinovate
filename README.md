@@ -2,6 +2,7 @@
 This project is developed as part of the NABARD Agriinovate Hackathon. Our team has focused on the challenge of empowering farmers through price discovery. The objective is to create a transparent and efficient platform that provides farmers with real-time market information, price trends, and negotiation tools. This solution aims to help farmers secure better deals and make informed decisions in agricultural markets.
 
 **Demo Video:** https://www.canva.com/design/DAGNkMc1NM0/8I5vulOKpjOMZu9sebA5fA/watch
+**Project Demo Link:** https://agriinovate-u39znz.flutterflow.app
 
 # Team Members
 Aditya Bhalla - Chatbot and AI/ML <br>
